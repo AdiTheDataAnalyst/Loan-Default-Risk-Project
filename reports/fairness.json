@@ -1,0 +1,159 @@
+{
+  "threshold": 0.4755,
+  "groups": {
+    "AgeGroup": [
+      {
+        "group": "18-25",
+        "n": 7850,
+        "default_rate": 0.2062,
+        "flag_rate": 0.7609,
+        "recall": 0.9117,
+        "precision": 0.2471
+      },
+      {
+        "group": "26-35",
+        "n": 9816,
+        "default_rate": 0.1633,
+        "flag_rate": 0.6107,
+        "recall": 0.8334,
+        "precision": 0.2229
+      },
+      {
+        "group": "36-45",
+        "n": 10003,
+        "default_rate": 0.1168,
+        "flag_rate": 0.4123,
+        "recall": 0.6986,
+        "precision": 0.1979
+      },
+      {
+        "group": "46-55",
+        "n": 9648,
+        "default_rate": 0.0858,
+        "flag_rate": 0.2512,
+        "recall": 0.564,
+        "precision": 0.1927
+      },
+      {
+        "group": "56-69",
+        "n": 13753,
+        "default_rate": 0.0518,
+        "flag_rate": 0.1031,
+        "recall": 0.31,
+        "precision": 0.1559
+      }
+    ],
+    "MaritalStatus": [
+      {
+        "group": "Divorced",
+        "n": 17060,
+        "default_rate": 0.1267,
+        "flag_rate": 0.4183,
+        "recall": 0.7534,
+        "precision": 0.2281
+      },
+      {
+        "group": "Married",
+        "n": 17065,
+        "default_rate": 0.103,
+        "flag_rate": 0.3479,
+        "recall": 0.678,
+        "precision": 0.2008
+      },
+      {
+        "group": "Single",
+        "n": 16945,
+        "default_rate": 0.1187,
+        "flag_rate": 0.4048,
+        "recall": 0.7435,
+        "precision": 0.2181
+      }
+    ],
+    "Education": [
+      {
+        "group": "Bachelor's",
+        "n": 12883,
+        "default_rate": 0.1227,
+        "flag_rate": 0.417,
+        "recall": 0.7571,
+        "precision": 0.2228
+      },
+      {
+        "group": "High School",
+        "n": 12769,
+        "default_rate": 0.1272,
+        "flag_rate": 0.442,
+        "recall": 0.7568,
+        "precision": 0.2178
+      },
+      {
+        "group": "Master's",
+        "n": 12741,
+        "default_rate": 0.1102,
+        "flag_rate": 0.3614,
+        "recall": 0.6994,
+        "precision": 0.2132
+      },
+      {
+        "group": "PhD",
+        "n": 12677,
+        "default_rate": 0.1043,
+        "flag_rate": 0.3402,
+        "recall": 0.6868,
+        "precision": 0.2105
+      }
+    ],
+    "EmploymentType": [
+      {
+        "group": "Full-time",
+        "n": 12671,
+        "default_rate": 0.0964,
+        "flag_rate": 0.3037,
+        "recall": 0.6577,
+        "precision": 0.2087
+      },
+      {
+        "group": "Part-time",
+        "n": 12865,
+        "default_rate": 0.1227,
+        "flag_rate": 0.3967,
+        "recall": 0.7289,
+        "precision": 0.2256
+      },
+      {
+        "group": "Self-employed",
+        "n": 12819,
+        "default_rate": 0.1098,
+        "flag_rate": 0.3989,
+        "recall": 0.7221,
+        "precision": 0.1987
+      },
+      {
+        "group": "Unemployed",
+        "n": 12715,
+        "default_rate": 0.1356,
+        "flag_rate": 0.4616,
+        "recall": 0.7807,
+        "precision": 0.2293
+      }
+    ],
+    "HasDependents": [
+      {
+        "group": "No",
+        "n": 25445,
+        "default_rate": 0.1273,
+        "flag_rate": 0.4371,
+        "recall": 0.7613,
+        "precision": 0.2217
+      },
+      {
+        "group": "Yes",
+        "n": 25625,
+        "default_rate": 0.1051,
+        "flag_rate": 0.3438,
+        "recall": 0.6872,
+        "precision": 0.21
+      }
+    ]
+  }
+}

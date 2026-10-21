@@ -1,0 +1,114 @@
+{
+  "model": "Logistic Regression",
+  "actual_default_rate_test": 0.1161,
+  "mean_raw_score_test": 0.425,
+  "mean_calibrated_test": 0.1166,
+  "brier_raw": 0.1995,
+  "brier_calibrated": 0.0905,
+  "roc_auc_raw": 0.7608,
+  "roc_auc_calibrated": 0.7608,
+  "reliability_raw": [
+    {
+      "predicted": 0.1175,
+      "observed": 0.0163,
+      "n": 5107.0
+    },
+    {
+      "predicted": 0.1959,
+      "observed": 0.0282,
+      "n": 5107.0
+    },
+    {
+      "predicted": 0.2586,
+      "observed": 0.0484,
+      "n": 5107.0
+    },
+    {
+      "predicted": 0.3169,
+      "observed": 0.0538,
+      "n": 5107.0
+    },
+    {
+      "predicted": 0.3756,
+      "observed": 0.0691,
+      "n": 5107.0
+    },
+    {
+      "predicted": 0.4364,
+      "observed": 0.0899,
+      "n": 5107.0
+    },
+    {
+      "predicted": 0.5032,
+      "observed": 0.1175,
+      "n": 5107.0
+    },
+    {
+      "predicted": 0.5772,
+      "observed": 0.1472,
+      "n": 5107.0
+    },
+    {
+      "predicted": 0.6663,
+      "observed": 0.2187,
+      "n": 5107.0
+    },
+    {
+      "predicted": 0.8029,
+      "observed": 0.3722,
+      "n": 5107.0
+    }
+  ],
+  "reliability_calibrated": [
+    {
+      "predicted": 0.017,
+      "observed": 0.0163,
+      "n": 5107.0
+    },
+    {
+      "predicted": 0.0307,
+      "observed": 0.0282,
+      "n": 5107.0
+    },
+    {
+      "predicted": 0.0435,
+      "observed": 0.0484,
+      "n": 5107.0
+    },
+    {
+      "predicted": 0.0571,
+      "observed": 0.0538,
+      "n": 5107.0
+    },
+    {
+      "predicted": 0.073,
+      "observed": 0.0691,
+      "n": 5107.0
+    },
+    {
+      "predicted": 0.0923,
+      "observed": 0.0899,
+      "n": 5107.0
+    },
+    {
+      "predicted": 0.1177,
+      "observed": 0.1175,
+      "n": 5107.0
+    },
+    {
+      "predicted": 0.1529,
+      "observed": 0.1472,
+      "n": 5107.0
+    },
+    {
+      "predicted": 0.2101,
+      "observed": 0.2187,
+      "n": 5107.0
+    },
+    {
+      "predicted": 0.3713,
+      "observed": 0.3722,
+      "n": 5107.0
+    }
+  ]
+}

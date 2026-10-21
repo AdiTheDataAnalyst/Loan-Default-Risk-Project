@@ -1,0 +1,68 @@
+{
+  "rows": 255347,
+  "columns": 18,
+  "defaults": 29653,
+  "non_defaults": 225694,
+  "default_rate_pct": 11.61,
+  "means": {
+    "Age": 43.5,
+    "Income": 82499.3,
+    "LoanAmount": 127578.87,
+    "CreditScore": 574.26,
+    "MonthsEmployed": 59.54,
+    "InterestRate": 13.49,
+    "DTIRatio": 0.5
+  },
+  "default_rate_by": {
+    "Education": {
+      "Bachelor's": 12.1,
+      "High School": 12.88,
+      "Master's": 10.87,
+      "PhD": 10.59
+    },
+    "EmploymentType": {
+      "Full-time": 9.46,
+      "Part-time": 11.97,
+      "Self-employed": 11.46,
+      "Unemployed": 13.55
+    },
+    "MaritalStatus": {
+      "Divorced": 12.53,
+      "Married": 10.4,
+      "Single": 11.91
+    },
+    "HasMortgage": {
+      "No": 12.35,
+      "Yes": 10.88
+    },
+    "HasDependents": {
+      "No": 12.72,
+      "Yes": 10.5
+    },
+    "LoanPurpose": {
+      "Auto": 11.88,
+      "Business": 12.33,
+      "Education": 11.84,
+      "Home": 10.23,
+      "Other": 11.79
+    },
+    "HasCoSigner": {
+      "No": 12.87,
+      "Yes": 10.36
+    },
+    "AgeGroup": {
+      "18-25": 20.76,
+      "26-35": 16.08,
+      "36-45": 11.55,
+      "46-55": 8.45,
+      "56-69": 5.5
+    },
+    "CreditBand": {
+      "Poor (<580)": 12.47,
+      "Fair (580-669)": 11.43,
+      "Good (670-739)": 10.63,
+      "Very good (740-799)": 10.5,
+      "Excellent (800+)": 9.81
+    }
+  }
+}
