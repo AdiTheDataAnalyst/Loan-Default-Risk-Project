@@ -1,21 +1,19 @@
 # Loan Risk Intelligence Platform
 
-An interactive Streamlit app for exploring loan default risk with machine learning, explainable predictions, fairness analysis, and batch scoring.
+An interactive Streamlit app for exploring loan default risk with machine learning and individual risk predictions.
 
 ## Overview
 
-This educational project explores a loan-default dataset and compares several machine-learning approaches. The app includes an interactive dashboard, exploratory analysis, model evaluation, individual and batch predictions, SHAP explanations, and a group fairness analysis.
+This educational project explores a loan-default dataset and compares several machine-learning approaches. The app includes an executive dashboard, exploratory analysis, model evaluation, and individual risk predictions.
 
 The included dataset contains **255,347 rows** and **18 columns**, with an observed default rate of **11.61%**. The dataset does not specify a currency for monetary values.
 
 ## Features
 
-- Executive dashboard with dataset statistics and model performance.
+- Executive dashboard with three summary KPIs: loans analysed, observed default rate, and selected-model PR-AUC.
 - Exploratory analysis of borrower characteristics and observed default rates.
 - Comparison of a dummy baseline, Logistic Regression, Random Forest, and XGBoost.
 - Individual risk estimates with explanations.
-- CSV batch scoring, input validation, and downloadable results.
-- SHAP explanations, model coefficients, and group fairness analysis.
 - Reproducible training and evaluation pipeline.
 
 ## Run locally
@@ -52,6 +50,16 @@ Run the test suite with:
 python -m pytest -q
 ```
 
+## Notebooks
+
+The `notebooks/` folder contains three step-by-step Jupyter notebooks:
+
+1. `01_Data_Cleaning.ipynb` — inspect the raw data, handle duplicate and missing records, and save a cleaned dataset to `data/processed/`.
+2. `02_Visualization.ipynb` — explore loan and default patterns using the cleaned dataset.
+3. `03_ML_Model.ipynb` — train and compare Logistic Regression, Random Forest, and XGBoost models on a stratified sample.
+
+Run them in order from the project root. Install dependencies with `python -m pip install -r requirements.txt`, then launch Jupyter with `jupyter notebook`.
+
 ## Data
 
 The dataset is the [Loan Default dataset by nikhil1e9 on Kaggle](https://www.kaggle.com/datasets/nikhil1e9/loan-default). The raw CSV is included in `data/raw/`, and a smaller sample is provided in `data/sample/`.
@@ -61,13 +69,13 @@ Check the dataset's current license and terms before reusing or redistributing i
 ## Project structure
 
 ```text
-app.py                  Streamlit entry point and navigation
-pages/                  Dashboard, analysis, prediction, and explanation pages
-src/                    Data processing, training, evaluation, and prediction modules
-data/                   Raw dataset and sample data
-models/                 Saved model pipelines
-reports/                Metrics, schemas, calibration, and explanation artifacts
-tests/                  Automated tests
+Loan-Default-Risk-Project/
+├── notebooks/           Data cleaning, visualization, and model training notebooks
+├── data/                Dataset
+├── app.py               Streamlit app entry point
+├── models/              Trained model files
+├── requirements.txt     Python dependencies
+└── README.md            Project documentation
 ```
 
 ## Method and limitations

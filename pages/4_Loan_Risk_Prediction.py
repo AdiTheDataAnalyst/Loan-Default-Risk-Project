@@ -1,19 +1,18 @@
-"""Page 4: estimate risk for one borrower, with validation and a plain-English explanation."""
+"""Page 4: estimate risk for one borrower, with input validation."""
 import plotly.graph_objects as go
 import streamlit as st
 
 from src import app_data as ad
 from src.config import CATEGORICAL_COLUMNS
-from src.explain import explain_one
 from src.predict import ValidationError, load_schema, score, validate_single
 from src.preprocessing import FEATURE_COLUMNS, add_features
 from src.theme import AMBER, BLUE, GREEN, MUTED, ROSE, TEAL, VIOLET, disclaimer, hero, insight, kpi_row, pill, section, style_fig
 
-hero("Loan Risk Prediction", "Enter one borrower's details to see the model's risk estimate and the reasons behind it.",
+hero("Loan Risk Prediction", "Enter one borrower's details to see the model's risk estimate.",
      badge="Single borrower")
-ad.stop_if_missing("train", "calibrate", "explain", "app_data")
+ad.stop_if_missing("train", "calibrate", "app_data")
 
-bundle, explainer, schema = ad.get_bundle(), ad.get_explainer(), load_schema()
+bundle, schema = ad.get_bundle(), load_schema()
 overall = ad.load_summary()["default_rate_pct"]
 NUM = schema["numeric"]
 
@@ -81,7 +80,7 @@ if not submitted:
     disclaimer()
     st.stop()
 
-# ---------- validate, score, explain ----------
+# ---------- validate and score ----------
 values = {col: st.session_state[f"f_{col}"] for col in schema["numeric"].keys() | set(CATEGORICAL_COLUMNS)}
 try:
     row = validate_single(values)
@@ -119,22 +118,4 @@ if not bundle["calibrator"].is_typical(raw):
     st.warning("This profile scores far from most borrowers in the data, so few similar borrowers exist and "
                "the estimate is less reliable. Treat it as a rough indication only.")
 
-# ---------- explanation ----------
-section("Why this score?", "Each bar shows how much a feature pushed this borrower's score up (red) or down (teal) compared with an average borrower.")
-contrib = explain_one(bundle["pipeline"], explainer, features)
-top = contrib.head(8).iloc[::-1]
-bar = go.Figure(go.Bar(x=top["contribution"], y=[f"{f} = {v:,.2f}" if isinstance(v, float) else f"{f} = {v}" for f, v in zip(top["feature"], top["value"])],
-                       orientation="h", marker_color=[ROSE if c > 0 else TEAL for c in top["contribution"]],
-                       hovertemplate="%{y}<br>impact %{x:+.3f}<extra></extra>"))
-bar.update_layout(title="Top contributing features", xaxis_title="Pushes risk down  ←   impact on score (log-odds)   →  pushes risk up")
-st.plotly_chart(style_fig(bar, 400, legend=False), width="stretch")
-
-up, down = contrib[contrib["contribution"] > 0].head(3), contrib[contrib["contribution"] < 0].head(3)
-fmt = lambda r: f"<b>{r.feature}</b> ({r.value:,.2f})" if isinstance(r.value, float) else f"<b>{r.feature}</b> ({r.value})"
-c1, c2 = st.columns(2)
-with c1:
-    insight("<b>Raising the score:</b><br>" + ("<br>".join(fmt(r) for r in up.itertuples()) or "nothing notable"), ROSE)
-with c2:
-    insight("<b>Lowering the score:</b><br>" + ("<br>".join(fmt(r) for r in down.itertuples()) or "nothing notable"), TEAL)
-st.caption("These explain how the model behaves, not why people default. A feature raising the score is an association in this dataset, not proof of cause.")
 disclaimer()
